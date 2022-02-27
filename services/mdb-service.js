@@ -24,5 +24,25 @@ module.exports = {
                 return res.data
             })
             .catch((err) => console.error(err));
+    },
+    createList: (name, desc) =>{
+        const data = {
+            name : name,
+            description: desc,
+            language: "en"
+        };
+
+        return instance({
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            url: `/list?api_key=${process.env.MDB_API_KEY}&session_id=${process.env.SESSION_ID}`,
+            data: data
+          })
+            .then((res) => {
+                return res;
+            })
+            .catch((err) => console.error(err));
     }
 }

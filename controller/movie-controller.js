@@ -21,5 +21,14 @@ async function getMovieByGenre(req,res) {
     res.json(listMovie).end();
 }
 
+function listMovie(){
+    const movies = [{
+        id: 1,
+        name: 'Sinchan',
+        genre: 'Kids'
+    }]
+    return movies;
+}
 
-module.exports = {movieGenre: getMovieByGenre};
+
+module.exports = {movieGenre: getMovieByGenre, listMovie};

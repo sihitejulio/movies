@@ -14,6 +14,8 @@ app.use('/genres', genre_route);
 app.use('/movie', movie_router);
 app.use('/list', list_router);
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+module.exports = server
